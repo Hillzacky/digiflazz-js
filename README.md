@@ -46,3 +46,42 @@ URL: https://domain-kamu.com/webhook
 Isi DF_WEBHOOK_SECRET di .env sesuai secret yang diset di Digiflazz
 ```
 ![Console View](https://novellum-filestore-mcp.s3.us-east-2.amazonaws.com/atxp:atxp_acct_78TS9cPSrbIGAzfBZ1OSv/25c99e92-7b96-49cd-9cd5-907e96e97f9e.png)
+```javascript
+const RC = {
+  SUCCESS         : '00',
+  TIMEOUT         : '01',
+  FAILED          : '02',
+  PENDING         : '03',
+  PENDING_ROUTER  : '99',  // DF Router Issue → treated as pending
+  // RC yang boleh di-retry ke alternatif berikutnya
+  RETRYABLE: new Set([
+    '01', // Timeout
+    '02', // Transaksi Gagal
+    '53', // Produk Seller Sedang Tidak Tersedia
+    '55', // Produk Sedang Gangguan
+    '62', // Seller sedang mengalami gangguan
+    '66', // Cut Off (Perbaikan Sistem Seller)
+    '68', // Stok habis
+    '70', // Timeout Dari Biller
+    '71', // Produk Sedang Tidak Stabil
+  ]),
+  // RC yang TIDAK boleh di-retry (masalah di sisi buyer / nomor tujuan)
+  NO_RETRY: new Set([
+    '40', // Payload Error
+    '41', // Signature tidak valid
+    '42', // Gagal memproses API Buyer
+    '43', // SKU tidak ditemukan/Non-Aktif
+    '44', // Saldo tidak cukup
+    '45', // IP tidak dikenali
+    '49', // Ref ID tidak unik
+    '51', // Nomor Tujuan Diblokir
+    '52', // Prefix tidak sesuai operator
+    '54', // Nomor Tujuan Salah
+    '57', // Jumlah Digit Kurang/Lebih
+    '80', // Akun diblokir oleh Seller
+    '82', // Akun belum terverifikasi
+    '84', // Nominal tidak valid
+    '85', // Limit transaksi
+  ]),
+};
+```
