@@ -12,15 +12,15 @@ cp .env.example .env
 node server.js
 ```
 ## Endpoints
-### Method	Endpoint	Deskripsi
 ```
-GET	/health -> Health check
-GET	/price-list ->	Semua produk prabayar (cache 10 menit)
-GET	/price-list?refresh=true -> 	Force refresh cache
-GET	/price-list/search?keyword={provider} ->	Cari produk, sortir termurah
-GET	/price-list/:sku	-> Detail produk by SKU
-POST	/transaction	-> Transaksi + auto retry
-POST	/webhook -> Endpoint webhook Digiflazz
+Method	Endpoint	Deskripsi
+GET	/health	Health check
+GET	/price-list	Semua produk prabayar (cache 10 menit)
+GET	/price-list?refresh=true	Force refresh cache
+GET	/price-list/search?keyword=XL	Cari produk, sortir termurah
+GET	/price-list/:sku	Detail produk by SKU
+POST	/transaction	Transaksi + auto retry
+POST	/webhook	Endpoint webhook Digiflazz
 ```
 ## Contoh Transaksi
 ```bash
