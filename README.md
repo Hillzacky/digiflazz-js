@@ -45,4 +45,4 @@ Di Digiflazz → Atur Koneksi → API → Webhook
 URL: https://domain-kamu.com/webhook
 Isi DF_WEBHOOK_SECRET di .env sesuai secret yang diset di Digiflazz
 ```
-[https://novellum-filestore-mcp.s3.us-east-2.amazonaws.com/atxp:atxp_acct_78TS9cPSrbIGAzfBZ1OSv/25c99e92-7b96-49cd-9cd5-907e96e97f9e.png]
+![Console View](https://novellum-filestore-mcp.s3.us-east-2.amazonaws.com/atxp:atxp_acct_78TS9cPSrbIGAzfBZ1OSv/25c99e92-7b96-49cd-9cd5-907e96e97f9e.png)
